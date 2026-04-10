@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ได้เลยค่ะคุณบดินทร์\! การทำ **Bilingual README (English/Thai)** เป็นไอเดียที่ยอดเยี่ยมมากค่ะ เพราะจะช่วยดึงดูดทั้งนักพัฒนาทั่วโลกและเพื่อนร่วมอาชีพในไทย (โดยเฉพาะในกรมสรรพสามิต) ให้เข้าถึงโปรเจกต์ของคุณบดินทร์ได้ง่ายขึ้น
 
-## Getting Started
+ไอรินออกแบบโครงสร้างไฟล์ `README.md` ที่ดูอินเตอร์ มีปุ่ม Badge สวยๆ และอธิบายจุดเด่นของ **Clean Architecture** ไว้อย่างชัดเจน คุณบดินทร์สามารถก๊อปปี้โค้ดด้านล่างนี้ไปวางทับในไฟล์ `README.md` ใน WebStorm ได้เลยค่ะ
 
-First, run the development server:
+-----
+
+### 📝 โค้ดสำหรับไฟล์ README.md
+
+````markdown
+# 🚀 Fullstack Next.js 16 + Tailwind CSS v4 Starter Template
+### The Ultimate Clean Architecture Boilerplate for Modern Web Apps
+
+[![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-green?style=for-the-badge)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+---
+
+## 🌐 Overview / ภาพรวมโปรเจกต์
+
+**[EN]** This is a high-performance, enterprise-grade starter template built with the latest **Next.js 16** and **Tailwind CSS v4**. It is designed with **Clean Architecture** principles to ensure your application is scalable, maintainable, and framework-independent. Perfect for AI-integrated applications and complex business systems.
+
+**[TH]** นี่คือเทมเพลตเริ่มต้นระดับ Enterprise ที่พัฒนาด้วย **Next.js 16** และ **Tailwind CSS v4** เวอร์ชันล่าสุด ออกแบบโดยใช้หลักการ **Clean Architecture** เพื่อให้ระบบรองรับการขยายตัว ดูแลรักษาง่าย และแยกส่วนธุรกิจออกจากเทคโนโลยีอย่างชัดเจน เหมาะอย่างยิ่งสำหรับโปรเจกต์ที่ต้องการเชื่อมต่อ AI และระบบงานที่มีความซับซ้อน
+
+---
+
+## ✨ Key Features / คุณสมบัติเด่น
+
+* 🚀 **Next.js 16 (App Router)** - Utilizing the latest Turbopack and Async Request APIs.
+* 🎨 **Tailwind CSS v4** - The new CSS-first engine for lightning-fast styling without config bloat.
+* 🏗️ **Clean Architecture** - Strict separation of concerns (Domain, Use Cases, Infrastructure, UI).
+* 🔐 **NextAuth.js v5** - Ready-to-use authentication factory.
+* 🗄️ **Prisma & PostgreSQL** - Fully Dockerized database setup for local development.
+* 🤖 **AI Factory** - Built-in infrastructure for multi-provider AI integration (OpenAI, Gemini, Claude).
+* 🐳 **Docker Ready** - Environment-ready with Docker Compose for both Dev and Production.
+
+---
+
+## 🏗️ Project Structure / โครงสร้างโปรเจกต์
+
+Our Clean Architecture approach keeps the core logic protected:
+```text
+src/
+├── app/          # UI Components & Routes (Next.js Layer)
+├── domain/       # Core Entities & Interfaces (Business Rules)
+├── use-cases/    # Application Logic & Workflows
+├── infra/        # External Services (DB, Auth, AI, API Clients)
+├── lib/          # Shared Utilities & Helpers
+└── components/   # Shared UI Components (Tailwind v4)
+````
+
+-----
+
+## 🛠️ Getting Started / เริ่มต้นใช้งาน
+
+### 1\. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/reaperinvest/fullstack-next16-tailwind4-template.git](https://github.com/reaperinvest/fullstack-next16-tailwind4-template.git)
+cd fullstack-next16-tailwind4-template
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2\. Setup Environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.example` to `.env.local` and fill in your credentials.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.example .env.local
+```
 
-## Learn More
+### 3\. Spin up Database (Docker)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+docker-compose up -d
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4\. Install & Run
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) to see your app\!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-----
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Feel free to fork this project, submit PRs, or report issues\! Give a ⭐ if this template helps your project\!
+
+-----
+
+## 👤 Author
+
+**Bodin Sudwad (YaiBrodin)**
+
+* Computer Technical Officer at the Excise Department, Thailand.
+* GitHub: [@reaperinvest](https://www.google.com/search?q=https://github.com/reaperinvest)
+
+-----
+
+*Built with ❤️ and AI collaboration.*
+
