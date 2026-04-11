@@ -1,8 +1,3 @@
------
-
-### 📝 โค้ดสำหรับไฟล์ README.md
-
-````markdown
 # 🚀 Fullstack Next.js 16 + Tailwind CSS v4 Starter Template
 ### The Ultimate Clean Architecture Boilerplate for Modern Web Apps
 
@@ -15,87 +10,74 @@
 
 ## 🌐 Overview / ภาพรวมโปรเจกต์
 
-**[EN]** This is a high-performance, enterprise-grade starter template built with the latest **Next.js 16** and **Tailwind CSS v4**. It is designed with **Clean Architecture** principles to ensure your application is scalable, maintainable, and framework-independent. Perfect for AI-integrated applications and complex business systems.
+**[EN]** This is a high-performance, enterprise-grade starter template built with the latest **Next.js 16** and **Tailwind CSS v4**. Designed with **Clean Architecture** principles to ensure framework independence, high maintainability, and AI-ready capabilities.
 
-**[TH]** นี่คือเทมเพลตเริ่มต้นระดับ Enterprise ที่พัฒนาด้วย **Next.js 16** และ **Tailwind CSS v4** เวอร์ชันล่าสุด ออกแบบโดยใช้หลักการ **Clean Architecture** เพื่อให้ระบบรองรับการขยายตัว ดูแลรักษาง่าย และแยกส่วนธุรกิจออกจากเทคโนโลยีอย่างชัดเจน เหมาะอย่างยิ่งสำหรับโปรเจกต์ที่ต้องการเชื่อมต่อ AI และระบบงานที่มีความซับซ้อน
+**[TH]** เทมเพลตเริ่มต้นระดับ Enterprise พัฒนาด้วย **Next.js 16** และ **Tailwind CSS v4** ออกแบบตามหลักการ **Clean Architecture** เพื่อให้ระบบรองรับการขยายตัว แยกส่วน Logic ออกจาก Framework อย่างชัดเจน และพร้อมสำหรับการเชื่อมต่อ AI ในระดับโครงสร้าง
+
+---
+
+## ⚙️ Automated Setup Pipeline / กระบวนการติดตั้งอัตโนมัติ
+
+**[TH]** ระบบถูกออกแบบมาให้ติดตั้งสภาพแวดล้อมทั้งหมดพร้อมใช้งานได้ทันทีผ่าน Single Command เพื่อลดเวลาการ Setup และคุมมาตรฐานของ Codebase
+
+![Workflow Analysis](public/docs/workflow-diagram.jpg)
+
+* **Stage 1:** Input & Configuration (Project name, Ports, AI Providers).
+* **Stage 2:** Automated Script Execution (Turbopack, Prisma, Docker).
+* **Stage 3:** Clean Architecture Scaffold (4-Layer creation).
+* **Stage 4:** Next.js Tuning & AI Integration.
+
+---
+
+## 🏗️ Clean Architecture (4-Layer Structure)
+
+**[TH]** โครงสร้างที่แยกความรับผิดชอบออกเป็น 4 ชั้น เพื่อความยืดหยุ่นในการเปลี่ยน Technology Stack ในอนาคต
+
+![Clean Architecture](public/docs/clean-architecture.jpg)
+
+* **UI Layer (`src/app`):** การแสดงผลและรับ Interaction (Next.js App Router).
+* **Application Layer (`src/use-cases`):** ส่วนเก็บ Business Logic และ Workflows ของระบบ.
+* **Domain Layer (`src/domain`):** หัวใจของระบบ (Pure TypeScript) เก็บ Entities และ Interfaces.
+* **Infrastructure Layer (`src/infra`):** ส่วนเชื่อมต่อภายนอก (Database, AI Providers, APIs).
 
 ---
 
 ## ✨ Key Features / คุณสมบัติเด่น
 
-* 🚀 **Next.js 16 (App Router)** - Utilizing the latest Turbopack and Async Request APIs.
-* 🎨 **Tailwind CSS v4** - The new CSS-first engine for lightning-fast styling without config bloat.
-* 🏗️ **Clean Architecture** - Strict separation of concerns (Domain, Use Cases, Infrastructure, UI).
-* 🔐 **NextAuth.js v5** - Ready-to-use authentication factory.
-* 🗄️ **Prisma & PostgreSQL** - Fully Dockerized database setup for local development.
-* 🤖 **AI Factory** - Built-in infrastructure for multi-provider AI integration (OpenAI, Gemini, Claude).
-* 🐳 **Docker Ready** - Environment-ready with Docker Compose for both Dev and Production.
+* 🚀 **Next.js 16 (App Router)** - Fast rendering with Turbopack.
+* 🎨 **Tailwind CSS v4** - Zero-config, CSS-first engine.
+* 🤖 **AI Agnostic** - สลับ AI Provider (OpenAI, Gemini, Claude) ได้ง่ายผ่าน `.env`.
+* 🐳 **Docker Ready** - พร้อมใช้งานบน Container ทันที.
+* 🏗️ **Scalable Design** - รองรับระบบงานขนาดใหญ่และการจัดการความเสี่ยง (BCMS Ready).
 
 ---
 
-## 🏗️ Project Structure / โครงสร้างโปรเจกต์
-
-Our Clean Architecture approach keeps the core logic protected:
-```text
-src/
-├── app/          # UI Components & Routes (Next.js Layer)
-├── domain/       # Core Entities & Interfaces (Business Rules)
-├── use-cases/    # Application Logic & Workflows
-├── infra/        # External Services (DB, Auth, AI, API Clients)
-├── lib/          # Shared Utilities & Helpers
-└── components/   # Shared UI Components (Tailwind v4)
-````
-
------
-
 ## 🛠️ Getting Started / เริ่มต้นใช้งาน
 
-### 1\. Clone the repository
-
-```bash
-git clone [https://github.com/reaperinvest/fullstack-next16-tailwind4-template.git](https://github.com/reaperinvest/fullstack-next16-tailwind4-template.git)
-cd fullstack-next16-tailwind4-template
-```
-
-### 2\. Setup Environment
-
-Copy `.env.example` to `.env.local` and fill in your credentials.
-
+### 1. Setup Environment
 ```bash
 cp .env.example .env.local
 ```
 
-### 3\. Spin up Database (Docker)
-
+### 2. Spin up Database (Docker)
 ```bash
 docker-compose up -d
 ```
 
-### 4\. Install & Run
-
+### 3. Install & Run
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) to see your app\!
-
------
-
-## 🤝 Contributing
-
-Feel free to fork this project, submit PRs, or report issues\! Give a ⭐ if this template helps your project\!
-
------
+---
 
 ## 👤 Author
 
 **Bodin Sudwad (YaiBrodin)**
-
 * Computer Technical Officer at the Excise Department, Thailand.
-* GitHub: [@reaperinvest](https://www.google.com/search?q=https://github.com/reaperinvest)
+* GitHub: [@reaperinvest](https://github.com/reaperinvest)
 
------
+---
 
-*Built with ❤️ and AI collaboration.*
-
+*Built with ❤️ and AI collaboration (Airin & Airada).*
